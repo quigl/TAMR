@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.View.RentRequestScreen"
+             Title="RentRequestScreen"
+             BackgroundColor="Brown">
+    
+    <ScrollView>
+    <VerticalStackLayout>
+
+            <StackLayout>
+                <Label Text="Username" 
+                       HorizontalOptions="End"
+                       TextColor="White"
+                       Margin="12,10,12,10"/>
+                      
+                
+                <Button Text="Logout" 
+                        HorizontalOptions="End"
+                        BackgroundColor="Gray"
+                        WidthRequest="120"
+                        Margin="5"/>
+            </StackLayout>
+
+            <Label
+                    Text="On this page, the Shop assistant will select the Customer from the TAMR System and will select the Tools/Machines that currently available"
+                    TextColor="White"
+                    Padding="10"/>
+        
+        
+
+        </VerticalStackLayout>
+
+        
+    </ScrollView>
+</ContentPage>

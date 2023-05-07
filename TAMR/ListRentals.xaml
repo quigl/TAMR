@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.ListRentals"
+             xmlns:model="clr-namespace:MauiDatabaseEntity.Model;assembly=MauiDatabaseEntity"
+             BackgroundColor="Honeydew"
+             Title="ListRentals">
+
+  
+
+    <ScrollView>
+      <VerticalStackLayout>
+
+        <Image 
+        HeightRequest="125"
+        Aspect="AspectFit"
+        Margin="10"
+        Source="logo.png"/>
+        
+        <Label
+       Text="Please select a user you would like to view records for"
+       Margin="20"
+       FontSize="15"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+        <Picker 
+        x:DataType="model:Customer"
+        x:Name="UsersPicker"
+        FontSize="15"
+        HorizontalOptions="Center" 
+        VerticalOptions="Center"
+        Margin="40"
+        ItemDisplayBinding="{Binding FullName}"
+        SelectedIndexChanged="OnUserSelectedIndexChanged"
+      />
+        <ScrollView>
+          <CollectionView Margin="75"
+       x:Name="RentalsCollectionView"
+       SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+
+              <DataTemplate x:DataType="model:CustomerOrder">
+
+
+                <Frame  Padding="1" Margin="10"
+                        BorderColor="Black"
+    
+                        CornerRadius="0">
+
+                  <Grid HeightRequest="160"
+               ColumnDefinitions="*,*">
+
+                    <Image 
+                  HeightRequest="125"
+                  Aspect="AspectFit"
+                  Source="{Binding ItemPic}"/>
+
+                    <Grid  Grid.Column="1" Margin="20">
+
+                      <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+
+                      </Grid.RowDefinitions>
+
+
+                      <Label Grid.Row="1"
+                   x:Name="ItemsLabel"
+                   FontSize="Medium"
+                   Text="{Binding Item}"/>
+
+                      <Label Grid.Column ="1" Grid.Row="1"
+                     HorizontalOptions="EndAndExpand"
+                     Margin="-18"
+                     FontSize="Medium"   
+                     Text="{Binding ReturnDatetext}"/>
+                    </Grid>
+                  </Grid>
+                </Frame>
+              </DataTemplate>
+            </CollectionView.ItemTemplate>
+          </CollectionView>
+        </ScrollView>
+
+      </VerticalStackLayout>
+    </ScrollView>
+  
+</ContentPage>

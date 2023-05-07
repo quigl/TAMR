@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.UpdateCustomer"
+             xmlns:viewmodel="clr-namespace:TAMR.ViewModel"
+             xmlns:model="clr-namespace:MauiDatabaseEntity.Model;assembly=MauiDatabaseEntity"
+             x:DataType="viewmodel:CustomerViewModel"
+             BackgroundColor="LightGray"
+             Title="UpdateCustomer">
+    <ScrollView>
+
+  <Border 
+       HeightRequest="800"
+       WidthRequest="600"
+       BackgroundColor="Honeydew"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+    
+    <VerticalStackLayout Spacing="25" Padding="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+      <Image 
+        HeightRequest="125"
+        Aspect="AspectFit"
+        Source="logo.png"/>
+      
+      
+      <Label
+       Text="Update a customer below"
+       SemanticProperties.HeadingLevel="Level2"
+       FontSize="28"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+    
+    <Label
+       Text="Please select a user you would like to update"
+       FontSize="15"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+    <Picker 
+        x:DataType="model:Customer"
+        x:Name="UsersPicker"
+        FontSize="15"
+        HorizontalOptions="Center" 
+        VerticalOptions="Center"
+        ItemDisplayBinding="{Binding FullName}"
+        SelectedIndexChanged="OnUserSelectedIndexChanged"
+      />
+    
+    <Entry x:Name="FirstNameEntry"
+       Keyboard="Text"
+       Text="{Binding Firstname}"
+       Placeholder="Firstname"
+       MaximumWidthRequest="500"
+                               />
+
+    <Entry x:Name="LastNameEntry"
+       Keyboard="Text"
+       Text="{Binding LastName}"
+       Placeholder="Lastname"
+       MaximumWidthRequest="500"
+                               />
+
+    <Entry x:Name="AddressEntry"
+       Keyboard="Text"
+       Text="{Binding Address}"
+       Placeholder="Address"
+       MaximumWidthRequest="500"
+                               />
+
+    <Entry x:Name="EmailEntry"
+       Keyboard="Text"
+       Text="{Binding Email}"
+       Placeholder="Email"
+       MaximumWidthRequest="500"
+                               />
+
+    <Entry x:Name="PhoneNumEntry"
+       Keyboard="Text"
+       Text="{Binding PhoneNum}"
+       Placeholder="Phone number"
+       MaximumWidthRequest="500"
+                               />
+
+    <Button x:Name="BtnUpdateCustomer" 
+     Text="Submit"
+     VerticalOptions="Center"
+     HorizontalOptions="Center"
+     Clicked="UpdateCustomerBtnClicked"
+     BackgroundColor="DarkBlue"/>
+  </VerticalStackLayout>
+</Border>
+    </ScrollView>
+</ContentPage>

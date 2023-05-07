@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:TAMR.ViewModel"
+             x:Class="TAMR.RentalRequest"
+             xmlns:model="clr-namespace:MauiDatabaseEntity.Model;assembly=MauiDatabaseEntity"
+             x:DataType="viewmodel:RentalRequestViewModel"
+             BackgroundColor="LightGray"
+             Title="RentalRequest">
+
+
+  <Border 
+       HeightRequest="650"
+       WidthRequest="650"
+       BackgroundColor="Honeydew"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+    
+    <VerticalStackLayout Spacing="25" Padding="40" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+      <Image 
+        HeightRequest="125"
+        Aspect="AspectFit"
+        Source="logo.png"/>
+      
+
+    <Label
+       Text="Please select a user you would like to create the request for"
+       FontSize="15"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+    <Picker 
+        x:DataType="model:Customer"
+        x:Name="UsersPicker"
+        FontSize="15"
+        HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand"
+        ItemDisplayBinding="{Binding FullName}"
+        SelectedIndexChanged="OnUserSelectedIndexChanged"
+      />
+
+    <Label
+       x:Name="ItemLabel"
+       Text="Please select a item you would like to add to the order"
+       IsVisible="False"
+       FontSize="15"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+    <Picker 
+        x:Name="ItemsPicker"
+        x:DataType="model:Item"
+        IsVisible="False"
+        FontSize="15"
+        ItemDisplayBinding="{Binding Name}"
+        HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand"
+        SelectedIndexChanged="OnItemSelectedIndexChanged"
+      />
+
+    <Label
+       x:Name="DateLabel"
+       IsVisible="False"
+       Text="Please select a date you would like to return the item"
+       FontSize="15"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+    <DatePicker
+      x:Name="DatePicker"
+      IsVisible="False"
+      HorizontalOptions="CenterAndExpand" 
+      VerticalOptions="CenterAndExpand"
+      PropertyChanged="DatePicker_PropertyChanged"
+      />
+
+    <Label
+       x:Name="TotalLabel"
+       Text=""
+       IsVisible="False"
+       FontSize="15"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+    <Button x:Name="BtnSubmit" 
+    Text="Submit"
+    VerticalOptions="Center"
+    HorizontalOptions="Center"
+    Clicked="BtnSubmit_Clicked"
+    BackgroundColor="DarkBlue"/>
+
+  </VerticalStackLayout>
+</Border>
+</ContentPage>

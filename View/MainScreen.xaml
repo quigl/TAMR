@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.View.MainScreen"
+             Title="MainScreen"
+             BackgroundColor="Brown">
+    <VerticalStackLayout>
+
+        <StackLayout>
+            <Label Text="Username" 
+                   HorizontalOptions="End"
+                   TextColor="White"
+                   Padding="12,10,12,10"/>
+            
+            <Button Text="Logout" 
+                    HorizontalOptions="End"
+                    BackgroundColor="Gray"
+                    WidthRequest="120"
+                    Margin="5"/>
+        </StackLayout>
+
+        <Grid>
+
+            
+            <HorizontalStackLayout>
+            <Button
+            x:Name="RentRequestBtn"
+            Text="Rent Request"
+            HeightRequest="40"
+            WidthRequest="150"
+            Clicked="Rent_Request_Button_Clicked"
+            BackgroundColor="Gray"/>
+
+            <Button
+            x:Name="LeasedItemsBtn"
+            Text="Leased Items"
+            HeightRequest="40"
+            WidthRequest="150"
+            BackgroundColor="Gray"
+            Clicked="Leased_Items_Button_Clicked"/>
+
+            <Button
+            x:Name="EditCustomerBtn"
+            Text="Edit Customer"
+            HeightRequest="40"
+            WidthRequest="150"
+            BackgroundColor="Gray"/>
+
+            </HorizontalStackLayout>
+        
+
+        </Grid>
+    </VerticalStackLayout>
+
+
+</ContentPage>

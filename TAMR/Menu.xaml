@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.Menu"
+             xmlns:viewmodel="clr-namespace:TAMR.ViewModel"
+             x:DataType="viewmodel:LoginViewModel"
+             BackgroundColor="LightGray"
+             Title="Menu">
+    <ScrollView>
+  <Border 
+       HeightRequest="1050"
+       WidthRequest="1250"
+       BackgroundColor="Honeydew"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+
+           
+    <VerticalStackLayout>
+
+      <Image 
+        HeightRequest="125"
+        Aspect="AspectFit"
+        Margin="10"
+        Source="logo.png"/>
+
+                
+      <Label 
+            Text="{Binding WelcomeMsg}"
+            VerticalOptions="EndAndExpand" 
+            HorizontalOptions="EndAndExpand"
+            Margin="20"/>
+
+      <Label
+       Text="Please select from the below options"
+       SemanticProperties.HeadingLevel="Level1"
+       FontSize="32"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+      <Button x:Name="BtnHelp" 
+                    Text="Help(off)"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    Margin="10"
+                    Clicked="HelpButtonClicked"
+                    BackgroundColor="DarkBlue"/>
+        
+            
+      <Button x:Name="BtnCreateCustomer" 
+                    Text="Create Customer"
+                    Margin="50"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="CreateCustomerClicked"
+                    BackgroundColor="DarkBlue"/>
+
+      <Button x:Name="BtnEditCustomer" 
+                    Text="Edit Customer"
+                    Margin="50"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="EditBtnClicked"
+                    BackgroundColor="DarkBlue"/>
+
+      <Button x:Name="BtnCreateRental" 
+                    Text="Rental Request"
+                    Margin="50"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="RentalRequestClicked"
+                    BackgroundColor="DarkBlue"/>
+
+      <Button x:Name="BtnListRentals" 
+                    Text="List rentals"
+                    Margin="50"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="ListRentalsClicked"
+                    BackgroundColor="DarkBlue"/>
+
+            
+            <Label
+           Text="Select Create Customer to be able to create a new customer account"
+           SemanticProperties.HeadingLevel="Level1"
+           FontSize="24"
+           IsVisible="{Binding Showhelp}"
+           TextColor="ForestGreen"
+           VerticalTextAlignment="Center"
+           HorizontalTextAlignment="Center"
+           />
+
+          <Label
+           Text="Select Edit Customer to be able to Edit/update a customers account"
+           FontSize="24"
+           IsVisible="{Binding Showhelp}"
+           TextColor="ForestGreen"
+           VerticalTextAlignment="Center"
+           HorizontalTextAlignment="Center"
+           />
+
+          <Label
+           Text="Select Create Customer to be able to create a new customer account"
+           SemanticProperties.HeadingLevel="Level1"
+           FontSize="24"
+           IsVisible="{Binding Showhelp}"
+           TextColor="ForestGreen"
+           VerticalTextAlignment="Center"
+           HorizontalTextAlignment="Center"
+           />
+
+            <Label
+           Text="Select list rentals to see current leases by customer"
+           SemanticProperties.HeadingLevel="Level1"
+           FontSize="24"
+           IsVisible="{Binding Showhelp}"
+           TextColor="ForestGreen"
+           VerticalTextAlignment="Center"
+           HorizontalTextAlignment="Center"
+           />
+        </VerticalStackLayout>
+
+  </Border>
+    </ScrollView>
+</ContentPage>

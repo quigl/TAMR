@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.Login"
+             xmlns:viewmodel="clr-namespace:TAMR.ViewModel"
+             Title="Login"
+             BackgroundColor="LightGray"
+             x:DataType="viewmodel:LoginViewModel">
+
+ 
+
+    <Border 
+       HeightRequest="650"
+       WidthRequest="600"
+       BackgroundColor="Honeydew"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+    
+    <ScrollView>
+
+      <VerticalStackLayout Spacing="25" Padding="40" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Image 
+        HeightRequest="125"
+        Aspect="AspectFit"
+        Source="logo.png"/>
+
+        <Label
+       Text="Welcome to Tools and machine Rental service"
+       SemanticProperties.HeadingLevel="Level1"
+       FontSize="32"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+        <Label
+       Text="Please login below"
+       SemanticProperties.HeadingLevel="Level2"
+       FontSize="28"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       />
+
+        <Entry x:Name="UsernameEntry"
+       Keyboard="Text"
+       Text="{Binding Username}"
+       Placeholder="Username"
+       MaximumWidthRequest="500"
+                               />
+
+        <Entry x:Name="PasswordEntry"
+       Keyboard="Text"
+       IsPassword="True"
+       Text="{Binding Password}"
+       Placeholder="Password"
+       MaximumWidthRequest="500"
+                               />
+
+        <Button x:Name="BtnLogin" 
+                    Text="Login"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="LoginBtnClicked"
+                    BackgroundColor="DarkBlue"/>
+
+
+        <Label
+       Text="Incorrect username or password entered, please try again"
+       SemanticProperties.HeadingLevel="Level2"
+       FontSize="20"
+       VerticalTextAlignment="Center"
+       HorizontalTextAlignment="Center"
+       IsVisible="{Binding Error}"
+       TextColor="Red"
+       />
+
+      </VerticalStackLayout>
+    </ScrollView>
+  </Border>
+</ContentPage>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.View.CreateAccount"
+             Title="CreateAccount"
+             Background="Brown">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Create your TAMR Account"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,30,0,30"
+            TextColor="White"/>
+
+        <Entry
+            x:Name="FirstName"
+            WidthRequest="300"
+            Placeholder="First Name"
+            PlaceholderColor="Black"
+            Margin="0,0,0,10"
+            BackgroundColor="DarkGrey"/>
+
+        <Entry
+            x:Name="LastName"
+            WidthRequest="300"
+            Placeholder="Last Name"
+            PlaceholderColor="Black"
+            Margin="0,0,0,10"
+            BackgroundColor="DarkGray"/>
+
+        <Entry
+            x:Name="Password"
+            WidthRequest="300"
+            Placeholder="Password"
+            PlaceholderColor="Black"
+            IsPassword="True" 
+            Margin="0,0,0,10"
+            BackgroundColor="DarkGray"/>
+
+        <Entry
+            x:Name="ConfirmPassword"
+            WidthRequest="300"
+            Placeholder="Confirm Password"
+            PlaceholderColor="Black"
+            IsPassword="True"
+            Margin="0,0,0,30"
+            BackgroundColor="DarkGrey"/>
+
+
+        <Button
+            x:Name="CreateAccountBtn"
+            Text="Create Account"            
+            HorizontalOptions="Center"
+            Clicked="Create_Account_Button_Clicked"
+            BackgroundColor="Grey"/>
+
+
+    </VerticalStackLayout>
+</ContentPage>

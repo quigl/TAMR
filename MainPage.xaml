@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TAMR.MainPage"
+             BackgroundColor="Brown">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+           
+            <Label
+                Text="TAMR Logo here"
+                FontSize="30"
+                HorizontalTextAlignment="Center"/>
+            
+            <Entry
+            x:Name="Username"
+            WidthRequest="300"
+            Placeholder="Username"
+            PlaceholderColor="Black"
+            BackgroundColor="DarkGray"/>
+
+            <Entry
+            x:Name="Password"
+            WidthRequest="300"
+            IsPassword="True"
+            Placeholder="Password"
+            PlaceholderColor="Black"
+            BackgroundColor="DarkGray"    />
+
+            <Button
+            x:Name="SignInBtn"
+            Text="Sign In"            
+            HorizontalOptions="Center"
+            BackgroundColor="Grey"
+            Clicked="Sign_In_Button_Clicked"/>
+
+            <Label
+                Text="Or"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"/>
+
+            <Button
+            x:Name="CreateAccountBtn"
+            Text="Create Account"            
+            HorizontalOptions="Center"
+            Clicked="Create_Account_Button_Clicked"
+            BackgroundColor="Grey"/> 
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
