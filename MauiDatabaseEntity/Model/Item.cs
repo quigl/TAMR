@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace MauiDatabaseEntity.Model
 {
+    //Item class
   public class Item
   {
-    public string? Name { get; set; }
-    public double price { get; set; }
-    public string? ItemPic { get; set; }
+    public string? Name { get; set; }       //Nullable property for Name
+    public double price { get; set; }       //Property for price
+    public string? ItemPic { get; set; }    //Nullable Property for Item Pic
   }
 }

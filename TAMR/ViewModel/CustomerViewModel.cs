@@ -19,7 +19,7 @@ namespace TAMR.ViewModel
     private string _Email;
 
     [ObservableProperty]
-    private string _PhoneNum;
+    private int _PhoneNum;
 
     [ObservableProperty]
     private string _Address;

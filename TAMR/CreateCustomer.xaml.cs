@@ -3,11 +3,13 @@ using TAMR.ViewModel;
 
 namespace TAMR;
 
+//Partial class CreateCustomer that extends ContentPage class. 
 public partial class CreateCustomer : ContentPage
 {
-  MauiDatabaseEntity.DBContext.Context _context;
-  private LoginViewModel lvm;
-  public CreateCustomer(LoginViewModel lvm, MauiDatabaseEntity.DBContext.Context _context)
+    MauiDatabaseEntity.DBContext.Context _context;        // Declares a variable named _context of type MauiDatabaseEntity.DBContext.Context.
+    private LoginViewModel lvm;                           // Declares a private variable named lvm of type LoginViewModel. 
+
+    public CreateCustomer(LoginViewModel lvm, MauiDatabaseEntity.DBContext.Context _context)
 	{
 		InitializeComponent();
     BindingContext = new CustomerViewModel(_context);
